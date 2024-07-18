@@ -1,0 +1,16 @@
+<div class="col-6 ms-3">
+  <!-- controllo se il todo è stato completato e assegno un background a secondo dello stato -->
+  <div
+    class="card mb-1"
+    [ngStyle]="{ 'background-color': todowithuser.completed ? 'green' : 'red' }"
+  >
+    <div class="card-body">
+      <div class="form-check">
+        <!-- tramite ngModule posso cambiare lo stato del todo -->
+        <input type="checkbox" [(ngModel)]="todowithuser.completed" />
+      </div>
+      <h4 class="card-title">{{ todowithuser.todo }}</h4>
+      <span class="card-text">Cose da fare di : {{ todowithuser.name }}</span>
+    </div>
+  </div>
+</div>

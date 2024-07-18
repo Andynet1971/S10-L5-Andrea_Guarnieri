@@ -1,0 +1,10 @@
+<div class="conteiner">
+  <!-- ciclo l'array di todo -->
+  <div class="row" *ngFor="let td of todos">
+    <!-- controllo che non vengano visualizzati i todo non completati -->
+    <div *ngIf="td.completed">
+      <!-- richiamo il componente per visualizzare e gestire i todo -->
+      <app-single-todo [todowithuser]="td"></app-single-todo>
+    </div>
+  </div>
+</div>

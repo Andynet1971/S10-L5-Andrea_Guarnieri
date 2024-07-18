@@ -1,0 +1,14 @@
+<div class="container">
+  <!-- ciclo tutti gli user -->
+  <div class="row mt-5" *ngFor="let user of users">
+    <!-- con ngIf escludo gli user senza todo -->
+    <div *ngIf="getTodoByUser(user.id).length > 0">
+      <h2>{{ user.firstName }} {{ user.lastName }}</h2>
+
+      <div class="col-12" *ngFor="let todo of getTodoByUser(user.id)">
+        <!-- crichiamo il componente per visualizzare e gestire i todo -->
+        <app-single-todo [todowithuser]="todo"></app-single-todo>
+      </div>
+    </div>
+  </div>
+</div>
